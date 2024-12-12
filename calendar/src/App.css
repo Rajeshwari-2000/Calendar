@@ -1,0 +1,255 @@
+/* Global styles for light and colorful theme */
+body {
+  background-color: #f9f9f9; /* Light background */
+  color: #333333; /* Dark text */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Accent color */
+:root {
+  --primary-color: #6200ea; /* Purple */
+  --secondary-color: #ff9800; /* Orange */
+  --button-hover-color: #3700b3; /* Darker purple */
+  --button-active-color: #03dac6; /* Teal */
+  --calendar-tile-hover: #ffeb3b; /* Yellow for hover */
+  --calendar-tile-active: #03dac6; /* Teal for active tile */
+  --modal-bg: #ffffff; /* White modal background */
+}
+
+/* Header styles */
+h1 {
+  color: #6200ea; /* Purple */
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Button styles */
+button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: var(--button-active-color);
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content h3 {
+  color: #6200ea; /* Purple */
+  margin-bottom: 20px;
+}
+
+/* Input and DatePicker styles */
+input, .react-datepicker__input-container input {
+  background-color: #ffffff; /* White background for input */
+  color: #333333; /* Dark text for input */
+  border: 1px solid #ddd; /* Light border */
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+label {
+  color: #333333;
+  font-size: 1rem;
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* React Calendar styles */
+.react-calendar {
+  background-color: #ffffff; /* White background for calendar */
+  color: #333333; /* Dark text */
+  border-radius: 12px;
+  border: none;
+  padding: 15px;
+  width: 350px; /* Adjust width for smaller calendar */
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Spacing for small screens */
+  transition: all 0.3s ease-in-out;
+}
+
+.react-calendar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.react-calendar__navigation {
+  background-color: #f2f2f2; /* Light grey background for navigation */
+  border-radius: 8px;
+}
+
+.react-calendar__navigation button {
+  color: #333333;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #ddd; /* Light grey for hover */
+}
+
+.react-calendar__tile {
+  background-color: #ffffff; /* White background for tiles */
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.react-calendar__tile:hover {
+  background-color: var(--calendar-tile-hover); /* Yellow on hover */
+  color: #ffffff;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--calendar-tile-active) !important; /* Teal for active tile */
+  color: #ffffff !important;
+}
+
+.react-calendar__tile--now {
+  background-color: #03dac6; /* Teal for today */
+  color: #ffffff;
+}
+
+.react-calendar__tile--hasActive {
+  background-color: #ff4081; /* Pink for active event */
+}
+
+/* Event list styling */
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 500px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+}
+
+ul li {
+  background-color: #ffffff; /* White background for events */
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li strong {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+ul li .event-time {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-left: 10px;
+}
+
+/* Styling for empty state or no events message */
+.no-events {
+  color: #333333;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Layout for large screens: Calendar and events side by side */
+@media screen and (min-width: 768px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .react-calendar {
+    margin-right: 30px; /* Margin for spacing between calendar and events list */
+  }
+}
+
+/* Layout for small screens: Calendar and events stacked */
+@media screen and (max-width: 767px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .react-calendar {
+    margin-bottom: 20px;
+  }
+}
